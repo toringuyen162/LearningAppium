@@ -1,16 +1,13 @@
-package Appium;
+package TestNow;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import java.io.File;
@@ -35,8 +32,8 @@ public class BaseTest {
 
         //code
         UiAutomator2Options options = new UiAutomator2Options();
-        options.setDeviceName("ToriPhone");
-        options.setApp("D:\\Github\\LearningAppium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
+        options.setDeviceName("Google Pixel 6");
+        options.setApp("D:\\Github\\LearningAppium\\src\\test\\java\\resources\\testNow - Crowdtesting_8.0_Apkpure.apk");
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));//Wait 10 seconds for the elements to be visible
@@ -53,9 +50,9 @@ public class BaseTest {
 
     //Scroll Gesture
 
-    @AfterClass
-    public void tearDown() {
-        driver.quit();
-        service.stop();
-    }
+//    @AfterClass
+//    public void tearDown() {
+//        driver.quit();
+//        service.stop();
+//    }
 }
